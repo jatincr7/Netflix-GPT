@@ -1,10 +1,21 @@
-import { useState } from "react"
+import { useRef, useState } from "react"
 import Header from "./Header"
+import {checkValidateData} from '../utils/Validate.js'
 const Login = () => { 
     const [isSignInForm, setIsignInForm] = useState(true)
+    const [errorMesage, setErrorMessage] = useState(null);
+    const email = useRef(null)
+    const password=useRef(null)
     const toggleSignInForm = () => { 
         setIsignInForm(!isSignInForm)
     }
+    const handleButtonClick = () => { 
+        const message = checkValidateData(email.current.value, password.current.value)
+        setErrorMessage(message)
+        
+    }   
+    
+
     return (<div>
         <Header />
         <div className="absolute">
@@ -14,14 +25,18 @@ const Login = () => {
 
         />
         </div>
-        <form className=" w-3/12 absolute p-12 bg-black my-36 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-80" >
+        <form onSubmit={(e)=>e.preventDefault()} className=" w-3/12 absolute p-12 bg-black my-36 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-80" >
             <h1 className="font-bold  text-3xl py-4">{isSignInForm ? "Sign In " : "Sign Up"}</h1>
             { !isSignInForm && <input type="text" placeholder="Enter your Full Name" className="p-4 my-4 w-full bg-gray-700" />}
 
-            <input type="text" placeholder="Enter your email addrress" className="p-4 my-4 w-full bg-gray-700" />
-            <input type="password" placeholder="Enter your  password" className="p-4 my-4 w-full bg-gray-700" />
-            <button className="p-4 my-6 bg-red-700  w-full rounded-lg">{isSignInForm ? "Sign In":"Sign Up" }</button>
-            <p clasName="py-4"  onClick={toggleSignInForm}> { isSignInForm ?"New to Netflix ? Sign Up  Now":"Already  registered Sign In Now "} </p>
+            <input type="text" placeholder="Enter your email addrress" ref={email}
+                className="p-4 my-4 w-full bg-gray-700" />
+            <input type="password" placeholder="Enter your  password" ref={password}
+                className="p-4 my-4 w-full bg-gray-700" />
+            <p className="text-red-500 font-bold text-lg py-2">{errorMesage }</p>
+            <button className="p-4 my-6 bg-red-700  w-full rounded-lg" onClick={handleButtonClick}>{isSignInForm ? "Sign In" : "Sign Up"}
+            </button>
+            <p className="py-4"  onClick={toggleSignInForm}> { isSignInForm ?"New to Netflix ? Sign Up  Now":"Already  registered Sign In Now "} </p>
         </form>
         
     </div>)
