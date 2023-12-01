@@ -3,15 +3,22 @@
 -Header
 -Login Form
 -Routing of App
-Sign Up Form
-Form Validation
-useRef Hooks
+-Sign Up Form
+-Form Validation
+-useRef Hooks
+-Firebase Setup
+-Deploying our app to production
+-Create SignUp User Account
+-Created Redux Store with userSlice
+-Implemented Sign Out
+-Update Profile
+-Fetch from TMDB Movies
 
 # Feature
 
-Login/Sign Up
-Sign in /Sign up forms
-redirect to browse page
+-Login/Sign Up
+-Sign in /Sign up forms
+-redirect to browse page
 -Browse(after authentication)
 
 -Header
@@ -21,6 +28,6 @@ redirect to browse page
 -Movie Suggestion
 -MovieList \*N
 
-NetflixGPT
+-NetflixGPT
 -Search Bar
 -Movie Suggestions
