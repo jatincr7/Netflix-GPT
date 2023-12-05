@@ -19,6 +19,11 @@
 -Add hardcoded values to constants files
 -Registered a TMDB movies API & create an app ,get access token
 -Get Data from TMDB now playing movies list
+-Build the secondary component
+-Build Movie list
+-TMDB IMAGE CDN
+-Made the brwose page with Tailwind.css
+-created custom hooks
 
 # Feature
 
