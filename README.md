@@ -25,6 +25,8 @@
 -Made the brwose page with Tailwind.css
 -created custom hooks
 
+- GPT Search features
+
 # Feature
 
 -Login/Sign Up
