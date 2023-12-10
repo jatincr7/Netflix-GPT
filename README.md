@@ -26,6 +26,9 @@
 -created custom hooks
 
 - GPT Search features
+  -GPT Search Page
+  -GPT Search bar
+  -Multilingual faeture in our app
 
 # Feature
 
